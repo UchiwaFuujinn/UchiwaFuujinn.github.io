@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ja">
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html; charset="Shift_JIS">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<title>団扇風神 System Exclusive Message</title>
+
+<style>
+	table{
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 460px;
+		background-color: #e8e8e8;
+		margin-left:40px
+	}
+
+	#table2{
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 660px;
+		background-color: #e8e8e8;
+		margin-left:40px
+	}
+  <style type="text/css">
+    <!--
+    .sans10 { color: black; font-family:sans-serif ;  font-size: 10pt; line-height : 1.5em}
+    .sans12 { color: black; font-family:sans-serif ;  font-size: 12pt; line-height : 1.5em}
+    .sans14 { color: black; font-family:sans-serif ;  font-size: 14pt; line-height : 1.5em}
+    .mono10 { color: black; font-family:monospace  ;  font-size: 10pt; line-height : 1.5em}
+	.mono14 { color: black; font-family:monospace  ;  font-size: 14pt; line-height : 1.5em}
+   -->
+    </style>
+
+</style>
+</HEAD>
+                                                                        
+<body bgcolor="#f8f8f8" text="#000000" link="#0000ff" vlink="#ff0033" alink="#ff0000" style="margin-right:30px;margin-left:30px;margin-top:50px;width: auto;-webkit-text-size-adjust: 100%;">
+
+<img src="../jpeg/uchiwafuujinn.jpg" alt="UchiwaFuujinn"/>
+<br>
+<!-- ====================================================================== -->
+<h2>団扇風神<br>System Exclusive Message</h2>
+
+<!-- ====================================================================== -->
+<div class="sans14">
+<h3>システム・エクスクルーシブ・メッセージ</h3>
+Arduino Monotor - printstrMIDI -<br><br>
+</div>
+
+<div class="sans12">
+<table border="0">
+<tr><td class="mono14">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td width="50" align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td width="50" align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td width="50" align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0nnnnnnn</td><td width="50" align="center">nnH</td><td>:</td><td>Device ID</td></tr>
+<tr><td class="mono14">00000001</td><td width="50" align="center">01H</td><td>:</td><td>printstrMIDI ID</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td width="50" align="center">xxH</td><td>:</td><td>ASCII 7bit Charactor</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td width="50" align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td width="50" align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td width="50" align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td width="50" align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
+</table>
+</div>
+<br>
+
+<!-- ====================================================================== -->
+<div class="sansx">
+</div>
+
+<!-- ====================================================================== -->
+<div class="sansx">
+
+<!-- ====================================================================== -->
+<br><br>
+<div class="sansx2">
+</div>
+</body>
+</html>
+

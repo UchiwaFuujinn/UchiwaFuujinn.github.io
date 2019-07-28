@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="Keywords" content="webMIDIAPI,WebMidiApi,webmidiapi">
+	<title>Arduino IotMIDI Monitor</title>
+	<script type="text/javascript" src="https://mikatahara.github.io/mywebmidiapi.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+<style>
+.sans { 
+	color: #eeeeee; 
+	font-family:sans-serif ;  
+	font-size: 12pt; 
+	line-height : 1.5em;
+}
+.mono { 
+	color: black; 
+	font-family:monospace ; 
+	font-size: 12pt; 
+	line-height : 1.5em;
+}
+#log {
+	width:90%;
+	height:90%;
+	position:absolute; left:5%;
+	background-color:#eeeeee;
+	font-family:Courier New, monospace;
+	font-size: 12pt; 
+	line-height : 1.05em;
+	color:#222222;
+	overflow:auto;
+	margin: 0 auto;
+	white-space:pre;
+}
+</style>
+
+<!--	-------------------------------------------------------------------- -->
+</HEAD>
+<body bgcolor="#222222" text="#eeeeee" link="#eeee22" vlink="#22ee22" 
+alink="#22eeee" style="margin-right:28px;margin-left:28px;margin-top:20px;">
+<br>
+<script>
+window.onload=function(){
+	runTest2();
+	var hoge = setInterval(function() {
+	    //wait webmidi start
+		if (inputs != null) {
+			setInputMenuID(document.input_device_select.ids);
+			setOutputMenuID(document.output_device_select.ids);
+			if(input_menu_id!=null){ setInputDeviceSelect();
+				input.onmidimessage = handleMIDIMessage3;
+			}
+			if(output_menu_id!=null) setOutputDeviceSelect();
+			clearInterval(hoge);
+
+		}
+	}, 200);
+}
+
+var mlognum=0;
+var ColumnNum=80;
+var stoplog=1;
+
+//add for Page 18, MIDI message monitor
+function makeMassage( event ) {
+	var i,k;
+	str=null;
+
+	if(stoplog.value==0) return;
+
+	if( event.data[0] ==0xFE ) return;
+
+	if( event.data[0] ==0xF0 ){
+		if( event.data[1] !=0x00 && event.data[2] !=0x40 && event.data[3] !=0x02 ) return; 
+		if( event.data[5] !=0x01 ) return; 
+		str = "";
+		for(i=6,k=0; i<event.data.length-1; i++, k++){
+			str += String.fromCharCode(event.data[i]);
+		}
+		str+="\n";
+		log.innerHTML+=str;
+	}
+}
+
+function handleMIDIMessage3( event ) {
+	var i,j;
+
+	makeMassage( event );
+/*
+	if(str[0]=='f' || str[0]=='F' ){
+		console.log(log.scrollTop);
+		log.scrollTop=500;
+		if(mlognum!=0){
+			log.innerHTML+="\n";
+			log.innerHTML+=str;
+			log.innerHTML+="\n";
+			mlognum=0;
+		} else {
+			log.innerHTML+=str;
+			log.innerHTML+="\n";
+		}
+
+	} else {
+		log.innerHTML+=str;
+		log.innerHTML+=" ";
+		mlognum++;
+		if(mlognum>=ColumnNum){
+			log.innerHTML+="\n";
+			mlognum=0;
+		}
+	}
+*/
+	log.scrollTop = log.scrollHeight;
+}
+
+function inputDeviceSelect3(e)
+{
+	inputDeviceSelect(e);
+	input.onmidimessage = handleMIDIMessage3;
+}
+
+</script>
+
+<!--	------------------------------------------------------------------ -->
+<div class="sans">
+Select MIDI Port<br>
+<form name="input_device_select">
+Input Device:
+<select name="ids" onChange="inputDeviceSelect3(this);">
+<option value="0">No Device
+</select>
+</form>
+
+<form name="output_device_select">
+Output Device:
+<select name="ids" onChange="outputDeviceSelect(this);">
+<option value="0">No Device
+</select>
+</form>
+</div>
+
+<!--	-------------------------------------------------------------------- -->
+<br>
+<div id="log">
+</div>
+<br>
+</body>
+</html>
