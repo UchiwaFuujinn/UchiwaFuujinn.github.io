@@ -1,5 +1,5 @@
-##Uchiwa Fuujinn
-�c��_
+﻿##Uchiwa Fuujinn
+団扇風神
 
 - Scratch 3 application with MIDI Extension
 [Scratch 3 MIDI](http://bit.ly/2NTJ1lh)
