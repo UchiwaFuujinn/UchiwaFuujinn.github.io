@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<HEAD>
+	<meta http-equiv="Content-Type" content="text/html; charset="Shift_JIS">
+	<meta http-equiv="Cache-Control" content="no-cache">
+	<meta http-equiv="Pragma" content="no-cache">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<title>団扇風神 System Exclusive Message</title>
+
+<style>
+	table{
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 660px;
+		background-color: #e8e8e8;
+		margin-left:40px
+	}
+
+	#table2{
+		border-collapse: collapse;
+		border-spacing: 0;
+		width: 660px;
+		background-color: #e8e8e8;
+		margin-left:40px
+	}
+  <style type="text/css">
+    <!--
+    .sans10 { color: black; font-family:sans-serif ;  font-size: 10pt; line-height : 1.5em}
+    .sans12 { color: black; font-family:sans-serif ;  font-size: 12pt; line-height : 1.5em}
+    .sans14 { color: black; font-family:sans-serif ;  font-size: 14pt; line-height : 1.5em}
+    .mono10 { color: black; font-family:monospace  ;  font-size: 10pt; line-height : 1.5em}
+	.mono14 { color: black; font-family:monospace  ;  font-size: 14pt; line-height : 1.5em}
+   -->
+    </style>
+
+</style>
+</HEAD>
+                                                                        
+<body bgcolor="#f8f8f8" text="#000000" link="#0000ff" vlink="#ff0033" alink="#ff0000" 
+style="margin-right:30px;margin-left:30px;margin-top:50px;width: auto;-webkit-text-size-adjust: 100%;">
+
+<body>
+<img src="../jpeg/uchiwafuujinn.jpg" alt="UchiwaFuujinn"/>
+<br>
+<!-- ====================================================================== -->
+<h2>団扇風神<br>System Exclusive Message<br>MIDI-CI</h2>
+
+<!-- ====================================================================== -->
+<div class="sans14">
+<h3>システム・エクスクルーシブ・メッセージ</h3>
+
+<!-- ====================================================================== -->
+<hr width="60%" align="left"><br>
+<div class="sans14">
+MIDI-CI - Profile Inquiry Message -<br><br>
+コンピュータからArduinoへの問合せメッセージ<br>
+Arduinoの種類を問い合わせます。<br><br>
+</div>
+
+<div class="sans12">
+<table border="1">
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td width="700">エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">01111110</td><td align="center">7EH</td><td>:</td><td>ユニバーサル・システム・エクスクルーシフ゛</td></tr>
+<tr><td class="mono14">01111111</td><td align="center">7FH</td><td>:</td><td>デスティネーション to/from whole MIDI Port </td></tr>
+<tr><td class="mono14">00001101</td><td align="center">0DH</td><td>:</td><td>サブID #1: MIDI-CI </td></tr>
+<tr><td class="mono14">00000010</td><td align="center">20H</td><td>:</td><td>サブID #2: Profile Inquiry </td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>MIDI-CI メッセージ・バージョン</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">pqH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">qrH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">stH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">uvH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use) </td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
+</table>
+<br>
+MNID (MIDI Negotiation Identifier)は28ビットのランダムナンバーが入ります。<br>
+この番号は、コンピュータ側からつながっている複数のArduinoを認識する為に使います。<br>
+</div>
+<br>
+
+<!-- ====================================================================== -->
+<hr width="60%" align="left"><br>
+<div class="sans14">
+MIDI-CI - Responder Reply Profile Capabilities Message -<br><br>
+ArduinoからコンピュータへArduinoの型番を返信します。<br><br>
+</div>
+
+<div class="sans12">
+<table border="1">
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td width="700">エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">01111110</td><td align="center">7EH</td><td>:</td><td>ユニバーサル・システム・エクスクルーシフ゛</td></tr>
+<tr><td class="mono14">01111111</td><td align="center">7FH</td><td>:</td><td>デスティネーション to/from whole MIDI Port </td></tr>
+<tr><td class="mono14">00001101</td><td align="center">0DH</td><td>:</td><td>サブID #1: MIDI-CI </td></tr>
+<tr><td class="mono14">00000010</td><td align="center">21H</td><td>:</td><td>サブID #2: Profile Inquiry </td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>MIDI-CI メッセージ・バージョン</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">pqH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">qrH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">stH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">uvH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use) </td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Family Model Number (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>Device Revision Level (Not Use)</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<tr><td class="mono14">00000000</td><td align="center">01H</td><td>:</td><td>Number of Current-Enable Profiles</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>リザーブ</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>Arduinoの型番上位バイト</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>Arduinoの型番下位バイト</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
+</table>
+</div>
+<br>
+MNID (MIDI Negotiation Identifier)はコンピュータから送られて来た値をそのまま返します。<br>
+この番号は、コンピュータ側からつながっている複数のArduinoを認識する為に使います。<br>
+Arduinoの番号はこちらの表を参照してください。<br>
+<br>
+
+<!-- ====================================================================== -->
+<hr width="60%" align="left"><br>
+<div class="sans14">
+Arduinoの型番<br><br>
+</div>
+
+<div class="sans12">
+<table border="1">
+<tr><td>Arduino名</td><td>型番上位バイト</td><td>型番下位バイト</td></tr>
+<tr><td>Arduino Yun</td>				<td>00</td><td>01</td></tr>
+<tr><td>Arduino Leonardo</td>			<td>00</td><td>02</td></tr>
+<tr><td>Arduino Leonardo ETH</td>		<td>00</td><td>03</td></tr>
+<tr><td>Arduino Micro</td>				<td>00</td><td>04</td></tr>
+<tr><td>Arduino Esplora</td>			<td>00</td><td>05</td></tr>
+<tr><td>LilyPad Arduino USB</td>		<td>00</td><td>06</td></tr>
+<tr><td>LilyPad Arduino</td>			<td>00</td><td>07</td></tr>
+<tr><td>Arduino Robot Control</td>		<td>00</td><td>08</td></tr>
+<tr><td>Arduino Robot Motor</td>		<td>00</td><td>09</td></tr>
+<tr><td>Adafruit Circut Playground</td>	<td>00</td><td>0A</td></tr>
+<tr><td>Arduino Yun Mini</td>			<td>00</td><td>0B</td></tr>
+<tr><td>Arduino Indstrial 101</td>		<td>00</td><td>0C</td></tr>
+<tr><td>Linino One</td>					<td>00</td><td>0D</td></tr>
+<tr><td>Arduino Micro</td>				<td>00</td><td>0E</td></tr>
+<tr><td>Arduino Esplora</td>			<td>00</td><td>0F</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<!--	--->
+
+<tr><td>LilyPad Arduino USB</td>		<td>00</td><td>10</td></tr>
+<tr><td>LilyPad Arduino</td>			<td>00</td><td>11</td></tr>
+<tr><td>Arduino Robot Control</td>		<td>00</td><td>12</td></tr>
+<tr><td>Arduino Robot Motor</td>		<td>00</td><td>13</td></tr>
+<tr><td>Adafruit Circut Playground</td>	<td>00</td><td>14</td></tr>
+<tr><td>Arduino Yun Mini</td>			<td>00</td><td>15</td></tr>
+<tr><td>Arduino Indstrial 101</td>		<td>00</td><td>16</td></tr>
+<tr><td>Linino One</td>					<td>00</td><td>17</td></tr>
+<tr><td>Arduino/Genuino Zero (Programming Port)</td><td>00</td><td>18</td></tr>
+<tr><td>Arduino/Genuino Zero (Native USB Port)</td><td>00</td><td>19</td></tr>
+<tr><td>Arduino/Genuino MKRZERO1000</td>	<td>00</td><td>1A</td></tr>
+<tr><td>Arduino MKRZERO</td>				<td>00</td><td>1B</td></tr>
+<tr><td>Arduino MKR WiFi 1010</td>			<td>00</td><td>1C</td></tr>
+<tr><td>Arduino NANO 33 IoT</td>			<td>00</td><td>1D</td></tr>
+<tr><td>Arduino MKR FOX 1200</td>			<td>00</td><td>1E</td></tr>
+<tr><td>Arduino MKR WAN 1300</td>			<td>00</td><td>1F</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<!--	--->
+<tr><td>Arduino MKR GSM 1400</td>			<td>00</td><td>20</td></tr>
+<tr><td>Arduino MKR NB 1500</td>			<td>00</td><td>21</td></tr>
+<tr><td>Arduino MKR Vidor 4000</td>			<td>00</td><td>22</td></tr>
+<tr><td>Adafruit Circuit Playground Express</td><td>00</td><td>23</td></tr>
+<tr><td>Arduino M0 Pro (Programming Port)</td><td>00</td><td>24</td></tr>
+<tr><td>Arduino M0 Pro (Native USB Port)</td><td>00</td><td>25</td></tr>
+<tr><td>Arduino M0 </td><td>00</td><td>26</td></tr>
+<tr><td>Arduino Tian </td><td>00</td><td>27</td></tr>
+<tr><td>Arduino Micro</td><td>00</td><td>28</td></tr>
+<tr><td>Arduino Esplora</td><td>00</td><td>29</td></tr>
+<tr><td>LilyPad Arduino USB</td><td>00</td><td>2A</td></tr>
+<tr><td>LilyPad Arduino</td><td>00</td><td>2B</td></tr>
+<tr><td>Arduino Robot Control</td><td>00</td><td>2C</td></tr>
+<tr><td>Arduino Robot Motor</td><td>00</td><td>2D</td></tr>
+<tr><td>Adafruit Circut Playground</td><td>00</td><td>2E</td></tr>
+<tr><td>Arduino Yun Mini</td><td>00</td><td>2F</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<!--	--->
+<tr><td>Arduino Indstrial 101</td><td>00</td><td>30</td></tr>
+<tr><td>Linino One</td><td>00</td><td>31</td></tr>
+<tr><td>Arduino/Genuino Zero (Programming Port)</td><td>00</td><td>32</td></tr>
+<tr><td>Arduino/Genuino Zero (Native USB Port)</td><td>00</td><td>33</td></tr>
+<tr><td>Arduino/Genuino MKRZERO1000</td><td>00</td><td>34</td></tr>
+<tr><td>Arduino MKRZERO</td><td>00</td><td>35</td></tr>
+<tr><td>Arduino MKR WiFi 1010</td><td>00</td><td>36</td></tr>
+<tr><td>Arduino NANO 33 IoT</td><td>00</td><td>37</td></tr>
+<tr><td>Arduino MKR FOX 1200</td><td>00</td><td>38</td></tr>
+<tr><td>Arduino MKR WAN 1300</td><td>00</td><td>39</td></tr>
+<tr><td>Arduino MKR GSM 1400</td><td>00</td><td>3A</td></tr>
+<tr><td>Arduino MKR NB 1500</td><td>00</td><td>3B</td></tr>
+<tr><td>Arduino MKR Vidor 4000</td><td>00</td><td>3C</td></tr>
+<tr><td>Adafruit Circuit Playground Express</td><td>00</td><td>3D</td></tr>
+<tr><td>Arduino M0 Pro (Programming Port)</td><td>00</td><td>3E</td></tr>
+<tr><td>Arduino M0 Pro (Native USB Port)</td><td>00</td><td>3F</td></tr>
+<tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
+<!--	--->
+<tr><td>Arduino M0 </td><td>00</td><td>40</td></tr>
+<tr><td>Arduino Tian </td><td>00</td><td>41</td></tr>
+
+</table>
+
+<!-- 
+
+-->
+
+<!-- ====================================================================== -->
+<br><br>
+<div class="sansx2">
+</div>
+</body>
+</html>
+
