@@ -1,13 +1,13 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ja">
 <HEAD>
-	<meta http-equiv="Content-Type" content="text/html";  charset="UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;  charset=UTF-8">
 	<meta http-equiv="Cache-Control" content="no-cache">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta http-equiv="Content-Script-Type" content="text/javascript">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-	<title>�c��_ System Exclusive Message</title>
+	<title>団扇風神 System Exclusive Message</title>
 
 <style>
 	table{
@@ -45,25 +45,25 @@ style="margin-right:30px;margin-left:30px;margin-top:50px;width: auto;-webkit-te
 <img src="../jpeg/uchiwafuujinn.jpg" alt="UchiwaFuujinn"/>
 <br>
 <!-- ====================================================================== -->
-<h2>�c��_<br>System Exclusive Message</h2>
+<h2>団扇風神<br>System Exclusive Message</h2>
 
 <!-- ====================================================================== -->
 <div class="sans14">
-<h3>�V�X�e���E�G�N�X�N���[�V�u�E���b�Z�[�W</h3>
+<h3>システム・エクスクルーシブ・メッセージ</h3>
 
 <!-- ====================================================================== -->
 <hr width="60%" align="left"><br>
 <div class="sans14">
 set DeviceID - setDeviceID -<br>
-�R���s���[�^����Arduino��DeviceID��ݒ肵�܂��B<br><br>
+コンピュータからArduinoへDeviceIDを設定します。<br><br>
 </div>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">00000001</td><td align="center">7EH</td><td>:</td><td>setDeviceID</td></tr>
 <tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">pqH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
@@ -71,12 +71,12 @@ set DeviceID - setDeviceID -<br>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">stH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">uvH</td><td>:</td><td>MNID (MIDI Negotiation Identifier)</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>Device ID</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
-MNID��4�o�C�g����̂ŁAMIDI �̃`�����l���ԍ��̂悤�Ɏg����f�o�C�XID (0 - F) �̒l��t�^���܂��B<br>
-���ꂼ���Arduino�������Ă��郁�b�Z�[�W�A���邢�̓R���s���[�^����R���g���[������ׂɑ��M���郁�b�Z�[�W��F�����邽�߂Ɏg���܂��B<br>
+MNIDは4バイトありので、MIDI のチャンネル番号のように使えるデバイスID (0 - F) の値を付与します。<br>
+それぞれのArduinoが送ってくるメッセージ、あるいはコンピュータからコントロールする為に送信するメッセージを認識するために使います。<br>
 <br>
 
 <!-- ====================================================================== -->
@@ -87,17 +87,17 @@ send ASCII<br><br>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>�f�o�C�X ID</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000001</td><td align="center">01H</td><td>:</td><td>send ASCII ID</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>ASCII 7bit Charactor</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;��</td><td>:</td><td></td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;��</td><td>:</td><td></td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;��</td><td>:</td><td></td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center">&nbsp;↑</td><td>:</td><td></td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
@@ -110,15 +110,15 @@ send INT8<br><br>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>�f�o�C�X ID</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">01H</td><td>:</td><td>send INT8 ID</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA H(MSB) signed or unsigned(*1)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA L(LSB)(*1)</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
@@ -136,16 +136,16 @@ send INT16<br><br>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>�f�o�C�X ID</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">03H</td><td>:</td><td>send INT16 ID</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA H(MSB) signed or unsigned(*2)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA M(*2)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA L(LSB)(*2)</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
@@ -165,17 +165,17 @@ send INT32<br><br>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>�f�o�C�X ID</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">04H</td><td>:</td><td>send INT32 ID</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA H(MSB) signed or unsigned(*3)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA M1(*3)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA M2(*3)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>INT DATA L(LSB)(*3)</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
@@ -195,17 +195,17 @@ send FLOAT32<br><br>
 
 <div class="sans12">
 <table border="1">
-<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>�G�N�X�N���[�V�t�J�E�X�e�[�^�X</td></tr>
-<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>�c��_ID��ʃo�C�g</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID���ʃo�C�g</td></tr>
-<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>�f�o�C�X ID</td></tr>
+<tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
+<tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
+<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
+<tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">05H</td><td>:</td><td>send FLOAT32 ID</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>FLOAT DATA H(MSB)(*4)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>FLOAT DATA M1(*4)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>FLOAT DATA M2(*4)</td></tr>
 <tr><td class="mono14">0xxxxxxx</td><td align="center">xxH</td><td>:</td><td>FLOAT DATA L(LSB)(*4)</td></tr>
-<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX�i�G���h�E�I�u�E�G�N�X�N���[�V�u�j</td></tr>
+<tr><td class="mono14">0xxxxxxx</td><td align="center"><b>F7H</b></td><td>:</td><td>EOX（エンド・オブ・エクスクルーシブ）</td></tr>
 </table>
 </div>
 <br>
@@ -217,7 +217,7 @@ send FLOAT32<br><br>
 <br><br>
 <div class="sansx2">
 <a href="sysex_midici.html" TARGET="_blank">
-System Exclusive MIDI-CI�d�l
+System Exclusive MIDI-CI仕様
 </a>
 </div>
 <br><br>
