@@ -73,13 +73,30 @@ function makeMassage( event ) {
 
 	if( event.data[0] ==0xF0 ){
 		if( event.data[1] !=0x00 && event.data[2] !=0x40 && event.data[3] !=0x02 ) return; 
-		if( event.data[5] !=0x01 ) return; 
-		str = "";
-		for(i=6,k=0; i<event.data.length-1; i++, k++){
-			str += String.fromCharCode(event.data[i]);
+
+		if( event.data[5] ==0x01 ){
+			str = "";
+			for(i=6,k=0; i<event.data.length-1; i++, k++){
+				str += String.fromCharCode(event.data[i]);
+			}
+			str+="\n";
+			log.innerHTML+=str;
 		}
-		str+="\n";
-		log.innerHTML+=str;
+
+		else if( event.data[5] ==0x02 ){
+			str = "";
+			var num = ((event.data[6]&0x01)<<7) + event.data[7];
+			if((event.data[6]&0x01) && (event.data[6]&0x10){
+				num-=256;
+			}
+			str += num.toString(10);
+			str += " ";
+			str += num.toString(16);
+			str += "H";
+			str+="\n";
+			log.innerHTML+=str;
+		}
+
 	}
 }
 
