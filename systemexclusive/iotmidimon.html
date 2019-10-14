@@ -86,10 +86,11 @@ function makeMassage( event ) {
 		else if( event.data[5] ==0x02 ){
 			str = "";
 			var num = ((event.data[6]&0x01)<<7) + event.data[7];
+			var numb=num;
 			if((event.data[6]&0x01) && (event.data[6]&0x10)){
-				num-=256;
+				numb-=256;
 			}
-			str += num.toString(10);
+			str += numb.toString(10);
 			str += " ";
 			str += num.toString(16);
 			str += "H";
@@ -97,6 +98,20 @@ function makeMassage( event ) {
 			log.innerHTML+=str;
 		}
 
+		else if( event.data[5] ==0x03 ){
+			str = "";
+			var num = ((event.data[6]&0x03)<<14) + ((event.data[7]&0x7F)<<7) + event.data[8];
+			var numb=num;
+			if((event.data[6]&0x02) && (event.data[6]&0x10)){
+				numb-=65536;
+			}
+			str += numb.toString(10);
+			str += " ";
+			str += num.toString(16);
+			str += "H";
+			str+="\n";
+			log.innerHTML+=str;
+		}
 	}
 }
 
