@@ -62,7 +62,7 @@ set DeviceID - setDeviceID -<br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">00000001</td><td align="center">7EH</td><td>:</td><td>setDeviceID</td></tr>
 <tr><td colspan="4" align="center" height="6" bgcolor="#cccccc"></td></tr>
@@ -89,7 +89,7 @@ send ASCII<br><br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000001</td><td align="center">01H</td><td>:</td><td>send ASCII ID</td></tr>
@@ -112,7 +112,7 @@ send INT8<br><br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">02H</td><td>:</td><td>send INT8 ID</td></tr>
@@ -138,7 +138,7 @@ send INT16<br><br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">03H</td><td>:</td><td>send INT16 ID</td></tr>
@@ -167,7 +167,7 @@ send INT32<br><br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">04H</td><td>:</td><td>send INT32 ID</td></tr>
@@ -198,7 +198,7 @@ send FLOAT32<br><br>
 <table border="1">
 <tr><td class="mono14" width="100">11110000</td><td width="50" align="center"><b>F0H</b></td><td width="12">:</td><td>エクスクルーシフ゛・ステータス</td></tr>
 <tr><td class="mono14">00000000</td><td align="center">00H</td><td>:</td><td>団扇風神ID上位バイト</td></tr>
-<tr><td class="mono14">01000000</td><td align="center">40H</td><td>:</td><td>ID中位バイト</td></tr>
+<tr><td class="mono14">01001000</td><td align="center">48H</td><td>:</td><td>ID中位バイト</td></tr>
 <tr><td class="mono14">00000010</td><td align="center">02H</td><td>:</td><td>ID下位バイト</td></tr>
 <tr><td class="mono14">0000nnnn</td><td align="center">0nH</td><td>:</td><td>デバイス ID</td></tr>
 <tr><td class="mono14">00000002</td><td align="center">05H</td><td>:</td><td>send FLOAT32 ID</td></tr>
